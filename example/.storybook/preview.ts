@@ -1,5 +1,6 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview, ReactRenderer } from "@storybook/react";
+import { themes } from "@storybook/theming";
 import "../src/index.css";
 
 const preview: Preview = {
@@ -8,6 +9,11 @@ const preview: Preview = {
       storySort: {
         method: "alphabetical",
       },
+    },
+    docs: {
+      theme: window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? themes.dark
+        : themes.light,
     },
     layout: "padded",
   },

@@ -5,5 +5,8 @@
   "git": {
     "commitMessage": "chore: release ${version}",
     "inFile": "CHANGELOG.md"
+  },
+  "hooks": {
+    "after:npm:release": "npm publish --otp=${OTP}"
   }
 }

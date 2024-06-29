@@ -1,6 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
 
-import { RACPreset } from "../plugin/dist";
+import { RACPreset } from "pandacss-preset-react-aria-components";
 
 export default defineConfig({
   // Whether to use css reset

@@ -90,6 +90,9 @@ importers:
       eslint-plugin-storybook:
         specifier: ^0.8.0
         version: 0.8.0(eslint@9.6.0)(typescript@5.5.2)
+      pandacss-preset-react-aria-components:
+        specifier: ^0.1.0
+        version: 0.1.0(@pandacss/dev@0.39.2(typescript@5.5.2))
       storybook:
         specifier: ^8.1.11
         version: 8.1.11(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4154,6 +4157,11 @@ packages:
 
   pako@0.2.9:
     resolution: {integrity: sha512-NUcwaKxUxWrZLpDG+z/xZaCgQITkA/Dv4V/T6bw7VON6l1Xz/VnrBqrYjZQ12TamKHzITTfOEIYUj48y2KXImA==}
+
+  pandacss-preset-react-aria-components@0.1.0:
+    resolution: {integrity: sha512-/1C/JRl2ysWvKsfG9cJHvfoa22bWg7Z3GV6P0fsxuRmqRBoLdYhMtl+RG+I5gPmRVmqacKnGA4BNWDftHTw2NQ==}
+    peerDependencies:
+      '@pandacss/dev': '>=0.9.0'
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -10257,6 +10265,10 @@ snapshots:
   package-json-from-dist@1.0.0: {}
 
   pako@0.2.9: {}
+
+  pandacss-preset-react-aria-components@0.1.0(@pandacss/dev@0.39.2(typescript@5.5.2)):
+    dependencies:
+      '@pandacss/dev': 0.39.2(typescript@5.5.2)
 
   parent-module@1.0.1:
     dependencies:

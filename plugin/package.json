@@ -1,6 +1,6 @@
 {
   "name": "pandacss-preset-react-aria-components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Yann Birba <birbayann@gmail.com>",
   "description": "A 🐼 PandaCSS preset for React aria components",
   "license": "MIT",

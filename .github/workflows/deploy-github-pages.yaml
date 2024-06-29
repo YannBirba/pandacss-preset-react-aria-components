@@ -36,5 +36,5 @@ jobs:
         with:
           install_command: cd example && pnpm install --frozen-lockfile # default: npm ci
           build_command: cd example && pnpm build # default: npm run build-storybook
-          path: example/storybook-static # default: storybook-static
+          path: storybook-static # default: storybook-static
           checkout: false # default: true

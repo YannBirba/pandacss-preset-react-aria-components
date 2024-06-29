@@ -1,0 +1,49 @@
+{
+  "name": "pandacss-preset-react-aria-components",
+  "version": "0.1.0",
+  "author": "Yann Birba <birbayann@gmail.com>",
+  "description": "A 🐼 PandaCSS preset for React aria components",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "styling",
+    "preset",
+    "chakra-ui",
+    "pandacss",
+    "react",
+    "react-aria",
+    "react-aria-components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YannBirba/pandacss-preset-react-aria-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YannBirba/pandacss-preset-react-aria-components/issues"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublish": "pnpm debug",
+    "debug": "pnpm build && panda debug -c panda.config.ts --cwd debug",
+    "watch": "pnpm build --watch"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.39.0",
+    "@pandacss/preset-base": "^0.40.1",
+    "@pandacss/types": "^0.39.0",
+    "@types/node": "^20.12.8",
+    "tsup": "^8.0.2"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": ">=0.9.0"
+  }
+}

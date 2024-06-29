@@ -8,16 +8,15 @@ const pandaThemeConditions = preset.conditions as Record<string, string>;
 // Here we remove peer and group conditions + the & selector, as we will add it back in later.
 const filteredThemeConditions: Record<string, string> = {};
 
-// TODO: traduire les commentaires en anglais
-// Parcourir les clés de l'objet original
+// Get the keys of the original object
 for (const key in pandaThemeConditions) {
-  // Vérifier que la clé ne commence pas par "peer" ou "group"
+  // Check if the key does not start with "peer" or "group"
   if (!key.startsWith("peer") && !key.startsWith("group")) {
-    // Récupérer le sélecteur correspondant
+    // Get the selector corresponding to the key
     let selector = pandaThemeConditions[key] as string;
-    // Enlever le caractère "&" et trimmer le sélecteur
+    // Remove the "&" character and trim the selector
     selector = selector.replace(/&/g, "").trim();
-    // Ajouter l'entrée filtrée dans le nouvel objet
+    // Add the filtered entry to the new object
     filteredThemeConditions[key] = selector;
   }
 }

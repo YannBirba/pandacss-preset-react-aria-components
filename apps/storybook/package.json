@@ -1,7 +1,6 @@
 {
   "type": "module",
   "scripts": {
-    "prepare": "panda codegen",
     "panda-watch": "pnpm exec panda cssgen --watch --outfile dist/styles.css",
     "dev": "storybook dev -p 6006 --disable-telemetry --no-open",
     "build": "storybook build",

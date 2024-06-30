@@ -1,9 +1,10 @@
 {
   "type": "module",
   "scripts": {
+    "prepare": "panda codegen",
     "panda-watch": "pnpm exec panda cssgen --watch --outfile dist/styles.css",
-    "dev": "panda codegen && storybook dev -p 6006 --disable-telemetry --no-open",
-    "build": "panda codegen && storybook build",
+    "dev": "storybook dev -p 6006 --disable-telemetry --no-open",
+    "build": "storybook build",
     "preview": "pnpm build && pnpm dlx http-server storybook-static -p 8080"
   },
   "dependencies": {

@@ -1,8 +1,6 @@
-# Workflow name
 name: Build and Publish Storybook to GitHub Pages
 
 on:
-  # Event for the workflow to run on
   push:
     branches:
       - 'main' # Replace with the branch you want to deploy from
@@ -12,29 +10,47 @@ permissions:
   pages: write
   id-token: write
 
-# List of jobs
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Job steps
     steps:
-      # Manual Checkout
-      - uses: actions/checkout@v4
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       # Set up Node
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20.x'
       
       # Install pnpm
-      - uses: pnpm/action-setup@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
           version: 9
 
-      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          cd example
+          pnpm install --frozen-lockfile
+
+      # Build Storybook
+      - name: Build Storybook
+        run: |
+          cd example
+          pnpm build
+
+      # List files in the build directory for debugging
+      - name: List build directory contents
+        run: |
+          cd example
+          ls -la storybook-static
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
-          install_command: cd example && pnpm install --frozen-lockfile # default: npm ci
-          build_command: cd example && pnpm build # default: npm run build-storybook
-          path: storybook-static # default: storybook-static
-          checkout: false # default: true
+          path: example/storybook-static
+          checkout: false

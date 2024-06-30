@@ -1,10 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "prepare": "panda codegen",
     "panda-watch": "pnpm exec panda cssgen --watch --outfile dist/styles.css",
-    "dev": "storybook dev -p 6006 --disable-telemetry --no-open",
-    "build": "storybook build",
+    "dev": "panda codegen && storybook dev -p 6006 --disable-telemetry --no-open",
+    "build": "panda codegen && storybook build",
     "preview": "pnpm build && pnpm dlx http-server storybook-static -p 8080"
   },
   "dependencies": {
@@ -37,7 +36,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-storybook": "^0.8.0",
-    "pandacss-preset-react-aria-components": "^0.1.0",
+    "pandacss-preset-react-aria-components": "workspace:*",
     "storybook": "^8.1.11",
     "typescript": "^5.5.2",
     "vite": "^5.3.2",

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "storybook": "pnpm --filter storybook",
+    "preset": "pnpm --filter pandacss-preset-react-aria-components"
+  }
+}

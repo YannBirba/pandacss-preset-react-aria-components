@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import {
   Switch as AriaSwitch,
   type SwitchProps as RACSwitchProps,
@@ -93,7 +93,7 @@ export function Switch({ children, ...props }: SwitchProps) {
             "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
           transitionTimingFunction: "default",
           transitionDuration: "fast",
-        })
+        }),
       )}
     >
       <div className={cx(groupFocusRing, track)}>

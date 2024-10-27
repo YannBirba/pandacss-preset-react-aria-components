@@ -1,9 +1,8 @@
-
 import type { Meta } from "@storybook/react";
 import { Form } from "react-aria-components";
-import { TextField } from "../components/TextField";
 import { css } from "../../styled-system/css";
 import { Button } from "../components/Button";
+import { TextField } from "../components/TextField";
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -18,9 +17,11 @@ const meta: Meta<typeof TextField> = {
 
 export default meta;
 
-export const Example = (args: any) => <TextField {...args} />;
+export const Example = (args: Record<string, unknown>) => (
+  <TextField {...args} />
+);
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

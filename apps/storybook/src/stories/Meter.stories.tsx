@@ -11,7 +11,7 @@ const meta: Meta<typeof Meter> = {
 
 export default meta;
 
-export const Example = (args: any) => <Meter {...args} />;
+export const Example = (args: Record<string, unknown>) => <Meter {...args} />;
 
 Example.args = {
   label: "Storage space",

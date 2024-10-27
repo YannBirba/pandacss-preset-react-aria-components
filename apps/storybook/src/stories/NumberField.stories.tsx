@@ -1,8 +1,8 @@
 import type { Meta } from "@storybook/react";
 import { Form } from "react-aria-components";
 import { css } from "../../styled-system/css";
-import { NumberField } from "../components/NumberField";
 import { Button } from "../components/Button";
+import { NumberField } from "../components/NumberField";
 
 const meta: Meta<typeof NumberField> = {
   component: NumberField,
@@ -17,9 +17,11 @@ const meta: Meta<typeof NumberField> = {
 
 export default meta;
 
-export const Example = (args: any) => <NumberField {...args} />;
+export const Example = (args: Record<string, unknown>) => (
+  <NumberField {...args} />
+);
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

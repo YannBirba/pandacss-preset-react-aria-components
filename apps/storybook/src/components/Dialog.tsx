@@ -1,4 +1,4 @@
-import { Dialog as RACDialog, type DialogProps } from "react-aria-components";
+import { type DialogProps, Dialog as RACDialog } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 
 export function Dialog(props: DialogProps) {
@@ -19,7 +19,7 @@ export function Dialog(props: DialogProps) {
             },
           },
         }),
-        props.className
+        props.className,
       )}
     />
   );

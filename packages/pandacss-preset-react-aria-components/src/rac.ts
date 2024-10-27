@@ -4,7 +4,6 @@ import type { Conditions } from "@pandacss/types";
 // css panda preset base conditions
 const pandaThemeConditions = preset.conditions as Record<string, string>;
 
-
 // Here we remove peer and group conditions + the & selector, as we will add it back in later.
 const filteredThemeConditions: Record<string, string> = {};
 
@@ -165,14 +164,14 @@ const getSelector = (
   conditionName: string,
   attributeName: string,
   attributeValue: string | null,
-  prefix?: "group" | "peer"
+  prefix?: "group" | "peer",
 ) => {
   const targetSelector = prefix === "peer" ? "~ &" : " &";
   const prefixString = prefix ? `:where(.${prefix}, [data-${prefix}])` : "";
   const baseSelector = attributeValue
     ? `[data-${attributeName}="${attributeValue}"]`
     : `[data-${attributeName}]`;
-  
+
   // const nativeSelector = nativeConditionSelectors.get(attributeName);
   // if it's a condition already supported by Pandacss and we can override it, we do so.
   if (
@@ -183,7 +182,7 @@ const getSelector = (
     const wrappedNativeSelector = prefix
       ? `${prefixString}:where(:not([data-rac]))${pandaSelector}${targetSelector}`
       : `&:where(:not([data-rac]))${pandaSelector}`;
-    let nativeSelectorGenerator:
+    const nativeSelectorGenerator:
       | string
       | ((wrap: (string: string) => string) => string) = wrappedNativeSelector;
     // if (nativeSelector === ":hover") {
@@ -226,24 +225,22 @@ type SelectorWrapper = (selector: string | Array<string>) => string;
 
 const mapSelector = (
   selectors: string | Array<string>,
-  fn: SelectorWrapper
+  fn: SelectorWrapper,
 ) => {
   if (Array.isArray(selectors)) {
     return selectors.map(fn);
-  } else {
-    return fn(selectors);
   }
+  return fn(selectors);
 };
 
 const wrapSelector = (
-  selector: string | Array<string> | Function,
-  wrap: SelectorWrapper
+  selector: string | Array<string> | ((wrap: SelectorWrapper) => unknown),
+  wrap: SelectorWrapper,
 ) => {
   if (typeof selector === "function") {
     return selector(wrap);
-  } else {
-    return wrap(selector);
   }
+  return wrap(selector);
 };
 
 const createCondition = (selectors: string | Array<string>) => {
@@ -264,10 +261,12 @@ export const createConditions = (): Conditions => {
         const selectors = getSelector(
           attributeName,
           attributeName,
-          attributeValue
+          attributeValue,
         );
         conditions[conditionName] = createCondition(
-          mapSelector(selectors, (selector) => wrapSelector(selector, (s) => s))
+          mapSelector(selectors, (selector) =>
+            wrapSelector(selector, (s) => s),
+          ),
         );
 
         prefixes.forEach((prefix) => {
@@ -276,7 +275,7 @@ export const createConditions = (): Conditions => {
             attributeName,
             attributeName,
             attributeValue,
-            prefix
+            prefix,
           );
           conditions[
             `${prefix}${conditionNameUcFirst
@@ -285,8 +284,8 @@ export const createConditions = (): Conditions => {
               .join("")}`
           ] = createCondition(
             mapSelector(selectors, (selector) =>
-              wrapSelector(selector, (s) => s)
-            )
+              wrapSelector(selector, (s) => s),
+            ),
           );
         });
       });
@@ -308,7 +307,7 @@ export const createConditions = (): Conditions => {
 
     const selectors = getSelector(conditionName, attributeValue, null);
     conditions[kebabToCamel(conditionName)] = createCondition(
-      mapSelector(selectors, (selector) => wrapSelector(selector, (s) => s))
+      mapSelector(selectors, (selector) => wrapSelector(selector, (s) => s)),
     );
 
     prefixes.forEach((prefix) => {
@@ -317,7 +316,7 @@ export const createConditions = (): Conditions => {
         conditionName,
         attributeValue,
         null,
-        prefix
+        prefix,
       );
       conditions[
         `${prefix}${conditionNameUcFirst
@@ -325,7 +324,7 @@ export const createConditions = (): Conditions => {
           .map((el) => `${el.charAt(0).toUpperCase()}${el.slice(1)}`)
           .join("")}`
       ] = createCondition(
-        mapSelector(selectors, (selector) => wrapSelector(selector, (s) => s))
+        mapSelector(selectors, (selector) => wrapSelector(selector, (s) => s)),
       );
     });
   });

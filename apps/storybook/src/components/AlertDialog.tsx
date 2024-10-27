@@ -1,7 +1,7 @@
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { chain } from "react-aria";
-import { Heading, type DialogProps } from "react-aria-components";
-import { css, cva, type RecipeVariantProps } from "../../styled-system/css";
+import { type DialogProps, Heading } from "react-aria-components";
+import { type RecipeVariantProps, css, cva } from "../../styled-system/css";
 import { Button } from "./Button";
 import { Dialog } from "./Dialog";
 import { Icon } from "./Icon";
@@ -49,13 +49,13 @@ export function AlertDialog(props: AlertDialogProps) {
       {({ close }) => (
         <>
           <Heading
-            slot="title"
             className={css({
               fontSize: "xl",
               lineHeight: "tight",
               fontWeight: "semibold",
               my: "0",
             })}
+            slot="title"
           >
             {title}
           </Heading>
@@ -83,17 +83,17 @@ export function AlertDialog(props: AlertDialogProps) {
               gap: "2",
             })}
           >
-            <Button variant="secondary" onPress={close}>
+            <Button onPress={close} variant="secondary">
               {cancelLabel || "Cancel"}
             </Button>
             <Button
+              autoFocus
+              onPress={chain(onAction, close)}
               variant={
                 variantProps.variant === "destructive"
                   ? "destructive"
                   : "primary"
               }
-              autoFocus
-              onPress={chain(onAction, close)}
             >
               {actionLabel}
             </Button>

@@ -1,21 +1,21 @@
 import {
   Button,
+  type CellProps,
   Collection,
   ColumnResizer,
   Group,
   Cell as RACCell,
   Column as RACColumn,
+  type ColumnProps as RACColumnProps,
   Row as RACRow,
   Table as RACTable,
   TableHeader as RACTableHeader,
   ResizableTableContainer,
-  TableHeaderProps,
+  type RowProps,
+  type TableHeaderProps,
+  type TableProps,
   composeRenderProps,
   useTableOptions,
-  type CellProps,
-  type ColumnProps as RACColumnProps,
-  type RowProps,
-  type TableProps,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 import { Checkbox } from "./Checkbox";
@@ -92,7 +92,7 @@ export function Column(props: ColumnProps) {
           color: "gray.700",
           _dark: { color: "zinc.300" },
           cursor: "default",
-        })
+        }),
       )}
     >
       {composeRenderProps(
@@ -100,10 +100,10 @@ export function Column(props: ColumnProps) {
         (children, { allowsSorting, sortDirection }) => (
           <div className={css({ display: "flex", alignItems: "center" })}>
             <Group
+              className={cx(focusRing, columnStyles)}
               data-group
               role="presentation"
               tabIndex={-1}
-              className={cx(focusRing, columnStyles)}
             >
               <span
                 className={css({
@@ -132,18 +132,18 @@ export function Column(props: ColumnProps) {
                       ? css({
                           transform: "rotate(180deg)",
                         })
-                      : ""
+                      : "",
                   )}
                 >
                   {sortDirection && (
                     <Icon
-                      name="arrow-up"
                       className={css({
                         w: "4",
                         h: "4",
                         color: "gray.500",
                         _dark: { color: "zinc.400" },
                       })}
+                      name="arrow-up"
                     />
                   )}
                 </span>
@@ -153,14 +153,15 @@ export function Column(props: ColumnProps) {
               <ColumnResizer className={cx(focusRing, resizerStyles)} />
             )}
           </div>
-        )
+        ),
       )}
     </RACColumn>
   );
 }
 
 export function TableHeader<T extends object>(props: TableHeaderProps<T>) {
-  let { selectionBehavior, selectionMode, allowsDragging } = useTableOptions();
+  const { selectionBehavior, selectionMode, allowsDragging } =
+    useTableOptions();
 
   return (
     <RACTableHeader
@@ -180,14 +181,12 @@ export function TableHeader<T extends object>(props: TableHeaderProps<T>) {
           borderRadiusTop: "lg",
           borderBottomWidth: "1px",
         }),
-        props.className
+        props.className,
       )}
     >
       {allowsDragging && <Column />}
       {selectionBehavior === "toggle" && (
         <RACColumn
-          width={36}
-          minWidth={36}
           className={css({
             textAlign: "start",
             fontSize: "sm",
@@ -195,6 +194,8 @@ export function TableHeader<T extends object>(props: TableHeaderProps<T>) {
             cursor: "default",
             p: "2",
           })}
+          minWidth={36}
+          width={36}
         >
           {selectionMode === "multiple" && <Checkbox slot="selection" />}
         </RACColumn>

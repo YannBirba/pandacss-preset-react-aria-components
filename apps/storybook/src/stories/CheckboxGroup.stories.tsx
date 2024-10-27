@@ -31,7 +31,7 @@ export const Default = {
   args: {},
 };
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form className="flex flex-col gap-2 items-start">
     <CheckboxGroup {...args} />
     <Button type="submit" variant="secondary">

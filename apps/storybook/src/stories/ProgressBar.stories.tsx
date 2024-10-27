@@ -11,7 +11,9 @@ const meta: Meta<typeof ProgressBar> = {
 
 export default meta;
 
-export const Example = (args: any) => <ProgressBar {...args} />;
+export const Example = (args: Record<string, unknown>) => (
+  <ProgressBar {...args} />
+);
 
 Example.args = {
   label: "Loading…",

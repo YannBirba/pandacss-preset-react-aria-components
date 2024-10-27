@@ -1,4 +1,4 @@
-import { Styles, css } from "../../styled-system/css";
+import { type Styles, css } from "../../styled-system/css";
 
 const focusRingGenericStyles = {
   outlineStyle: "solid",

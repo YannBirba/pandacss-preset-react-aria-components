@@ -2,8 +2,8 @@ import {
   OverlayArrow,
   PopoverContext,
   Popover as RACPopover,
-  useSlottedContext,
   type PopoverProps as RACPopoverProps,
+  useSlottedContext,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 
@@ -71,8 +71,8 @@ export const Popover = ({
   className,
   ...props
 }: PopoverProps) => {
-  let popoverContext = useSlottedContext(PopoverContext)!;
-  let isSubmenu = popoverContext?.trigger === "SubmenuTrigger";
+  const popoverContext = useSlottedContext(PopoverContext);
+  const isSubmenu = popoverContext?.trigger === "SubmenuTrigger";
   let offset = showArrow ? 12 : 8;
   offset = isSubmenu ? offset - 6 : offset;
   return (
@@ -80,9 +80,6 @@ export const Popover = ({
       {showArrow && (
         <OverlayArrow className="group">
           <svg
-            width={12}
-            height={12}
-            viewBox="0 0 12 12"
             className={css({
               display: "block",
               fill: "white",
@@ -99,8 +96,12 @@ export const Popover = ({
                 rotate: "90deg",
               },
             })}
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
           >
             <path d="M0 0 L6 6 L12 0" />
+            <title>Close</title>
           </svg>
         </OverlayArrow>
       )}

@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react";
-import { AlertDialog } from "../components/AlertDialog";
+import type { ComponentProps } from "react";
 import { DialogTrigger } from "react-aria-components";
+import { AlertDialog } from "../components/AlertDialog";
 import { Button } from "../components/Button";
 import { Modal } from "../components/Modal";
 
@@ -14,7 +15,7 @@ const meta: Meta<typeof AlertDialog> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: ComponentProps<typeof AlertDialog>) => (
   <DialogTrigger>
     <Button variant="secondary">Delete…</Button>
     <Modal>

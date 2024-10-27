@@ -2,7 +2,7 @@ import {
   Button as RACButton,
   type ButtonProps as RACButtonProps,
 } from "react-aria-components";
-import { cva, cx, type RecipeVariantProps } from "../../styled-system/css";
+import { type RecipeVariantProps, cva, cx } from "../../styled-system/css";
 import { focusRing } from "./focusRing";
 
 const buttonRecipe = cva({
@@ -116,7 +116,7 @@ export const Button = (props: ButtonProps) => {
   const className = cx(
     buttonRecipe(variantProps),
     focusRing,
-    localProps.className
+    localProps.className,
   );
 
   return <RACButton {...localProps} className={className} />;

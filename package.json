@@ -1,7 +1,13 @@
 {
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  },
   "private": true,
   "scripts": {
-    "storybook": "pnpm --filter ./apps/storybook",
-    "preset": "pnpm --filter ./packages/pandacss-preset-react-aria-components"
+    "check": "biome check --write",
+    "format": "biome format --write",
+    "lint": "biome lint --write",
+    "preset": "pnpm --filter ./packages/pandacss-preset-react-aria-components",
+    "storybook": "pnpm --filter ./apps/storybook"
   }
 }

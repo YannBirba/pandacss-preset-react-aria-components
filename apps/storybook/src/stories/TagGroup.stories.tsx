@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
 import { useListData } from "react-stately";
-import { Tag, TagGroup, TagProps } from "../components/TagGroup";
+import { Tag, TagGroup, type TagProps } from "../components/TagGroup";
 
 const meta: Meta<typeof Example> = {
   component: TagGroup,
@@ -19,7 +19,7 @@ const initialItems: Array<TagProps & { name: string }> = [
   { id: 4, name: "Vanilla" },
 ];
 
-export const Example = (args: any) => {
+export const Example = (args: Record<string, unknown>) => {
   const list = useListData({
     initialItems,
   });

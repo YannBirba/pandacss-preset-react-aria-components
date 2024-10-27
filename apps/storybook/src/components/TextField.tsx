@@ -1,7 +1,7 @@
 import {
   TextField as RACTextField,
-  TextFieldProps as RACTextFieldProps,
-  ValidationResult,
+  type TextFieldProps as RACTextFieldProps,
+  type ValidationResult,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 import {
@@ -36,7 +36,7 @@ export const TextField = ({
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       {label && <Label>{label}</Label>}

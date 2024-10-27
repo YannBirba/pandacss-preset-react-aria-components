@@ -18,9 +18,11 @@ const meta: Meta<typeof SearchField> = {
 
 export default meta;
 
-export const Example = (args: any) => <SearchField {...args} />;
+export const Example = (args: Record<string, unknown>) => (
+  <SearchField {...args} />
+);
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

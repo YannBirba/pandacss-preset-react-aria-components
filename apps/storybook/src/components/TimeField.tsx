@@ -1,8 +1,8 @@
 import {
   TimeField as RACTimeField,
-  TimeFieldProps as RACTimeFieldProps,
-  TimeValue,
-  ValidationResult,
+  type TimeFieldProps as RACTimeFieldProps,
+  type TimeValue,
+  type ValidationResult,
 } from "react-aria-components";
 import { DateInput } from "./DateField";
 import { Description, FieldError, Label } from "./Field";

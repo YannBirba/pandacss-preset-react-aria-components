@@ -2,10 +2,10 @@ import { css, cx } from "../../styled-system/css";
 
 import {
   Slider as RACSlider,
+  type SliderProps as RACSliderProps,
   SliderOutput,
   SliderThumb,
   SliderTrack,
-  type SliderProps as RACSliderProps,
 } from "react-aria-components";
 import { Label } from "./Field";
 import { focusRing } from "./focusRing";
@@ -82,7 +82,7 @@ export function Slider<T extends number | number[]>({
           _orientationVertical: {
             display: "flex",
           },
-        })
+        }),
       )}
     >
       <Label>{label}</Label>
@@ -102,7 +102,6 @@ export function Slider<T extends number | number[]>({
         }
       </SliderOutput>
       <SliderTrack
-        data-group
         className={css({
           gridColumn: "span 2 / span 2",
           display: "flex",
@@ -115,16 +114,17 @@ export function Slider<T extends number | number[]>({
             h: "64",
           },
         })}
+        data-group
       >
         {({ state }) => (
           <>
             <div className={trackStyles} />
             {state.values.map((_, i) => (
               <SliderThumb
-                key={i}
-                index={i}
-                rAC-label={thumbLabels?.[i]}
+                aria-label={thumbLabels?.[i]}
                 className={cx(focusRing, thumbStyles)}
+                index={i}
+                key={thumbLabels?.[i]}
               />
             ))}
           </>

@@ -1,8 +1,8 @@
 import type { Meta } from "@storybook/react";
-import { Select, SelectItem, SelectSection } from "../components/Select";
 import { Form } from "react-aria-components";
 import { css } from "../../styled-system/css";
 import { Button } from "../components/Button";
+import { Select, SelectItem, SelectSection } from "../components/Select";
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -17,7 +17,7 @@ const meta: Meta<typeof Select> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <Select {...args}>
     <SelectItem>Chocolate</SelectItem>
     <SelectItem id="mint">Mint</SelectItem>
@@ -26,12 +26,14 @@ export const Example = (args: any) => (
   </Select>
 );
 
-export const DisabledItems = (args: any) => <Example {...args} />;
+export const DisabledItems = (args: Record<string, unknown>) => (
+  <Example {...args} />
+);
 DisabledItems.args = {
   disabledKeys: ["mint"],
 };
 
-export const Sections = (args: any) => (
+export const Sections = (args: Record<string, unknown>) => (
   <Select {...args}>
     <SelectSection title="Fruit">
       <SelectItem id="Apple">Apple</SelectItem>
@@ -60,7 +62,7 @@ Sections.args = {
   label: "Preferred fruit or vegetable",
 };
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

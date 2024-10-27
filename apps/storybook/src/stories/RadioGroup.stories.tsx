@@ -1,7 +1,7 @@
 import { Form } from "react-aria-components";
 import { css } from "../../styled-system/css";
-import { Radio, RadioGroup } from "../components/RadioGroup";
 import { Button } from "../components/Button";
+import { Radio, RadioGroup } from "../components/RadioGroup";
 
 export default {
   component: RadioGroup,
@@ -29,7 +29,7 @@ export const Default = {
   args: {},
 };
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

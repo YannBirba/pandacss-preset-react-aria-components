@@ -1,8 +1,7 @@
-
 import type { Meta } from "@storybook/react";
 import { Form } from "react-aria-components";
-import { Button } from "../components/Button";
 import { css } from "../../styled-system/css";
+import { Button } from "../components/Button";
 import { DateField } from "../components/DateField";
 
 const meta: Meta<typeof DateField> = {
@@ -18,9 +17,11 @@ const meta: Meta<typeof DateField> = {
 
 export default meta;
 
-export const Example = (args: any) => <DateField {...args} />;
+export const Example = (args: Record<string, unknown>) => (
+  <DateField {...args} />
+);
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

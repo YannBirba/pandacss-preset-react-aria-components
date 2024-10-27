@@ -11,4 +11,6 @@ const meta: Meta<typeof Switch> = {
 
 export default meta;
 
-export const Example = (args: any) => <Switch {...args}>Wi-Fi</Switch>;
+export const Example = (args: Record<string, unknown>) => (
+  <Switch {...args}>Wi-Fi</Switch>
+);

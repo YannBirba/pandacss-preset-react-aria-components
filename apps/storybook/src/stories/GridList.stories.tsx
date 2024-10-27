@@ -11,7 +11,7 @@ const meta: Meta<typeof GridList> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <GridList aria-label="Ice cream flavors" {...args}>
     <GridListItem id="chocolate">Chocolate</GridListItem>
     <GridListItem id="mint">Mint</GridListItem>
@@ -25,7 +25,9 @@ Example.args = {
   selectionMode: "multiple",
 };
 
-export const DisabledItems = (args: any) => <Example {...args} />;
+export const DisabledItems = (args: Record<string, unknown>) => (
+  <Example {...args} />
+);
 DisabledItems.args = {
   ...Example.args,
   disabledKeys: ["mint"],

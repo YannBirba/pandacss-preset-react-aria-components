@@ -17,7 +17,7 @@ export function ProgressBar({ label, ...props }: ProgressBarProps) {
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       {({ percentage, valueText, isIndeterminate }) => (
@@ -78,9 +78,9 @@ export function ProgressBar({ label, ...props }: ProgressBarProps) {
                       animation: "slideOutToRightFull",
                       animationIterationCount: "infinite",
                     })
-                  : css({ left: "0" })
+                  : css({ left: "0" }),
               )}
-              style={{ width: (isIndeterminate ? 40 : percentage) + "%" }}
+              style={{ width: `${isIndeterminate ? 40 : percentage}%` }}
             />
           </div>
         </>

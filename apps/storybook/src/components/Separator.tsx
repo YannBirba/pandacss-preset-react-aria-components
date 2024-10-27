@@ -1,6 +1,6 @@
 import {
   Separator as RACSeparator,
-  SeparatorProps,
+  type SeparatorProps,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 

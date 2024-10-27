@@ -1,9 +1,8 @@
-
 import type { Meta } from "@storybook/react";
 import { Form } from "react-aria-components";
-import { TimeField } from "../components/TimeField";
 import { css } from "../../styled-system/css";
 import { Button } from "../components/Button";
+import { TimeField } from "../components/TimeField";
 
 const meta: Meta<typeof TimeField> = {
   component: TimeField,
@@ -18,9 +17,11 @@ const meta: Meta<typeof TimeField> = {
 
 export default meta;
 
-export const Example = (args: any) => <TimeField {...args} />;
+export const Example = (args: Record<string, unknown>) => (
+  <TimeField {...args} />
+);
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

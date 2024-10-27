@@ -1,7 +1,7 @@
 import {
   ModalOverlay,
-  Modal as RACModal,
   type ModalOverlayProps,
+  Modal as RACModal,
 } from "react-aria-components";
 import { css } from "../../styled-system/css";
 

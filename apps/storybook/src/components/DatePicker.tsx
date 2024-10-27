@@ -1,8 +1,8 @@
 import {
-  DateValue,
+  type DateValue,
   DatePicker as RACDatePicker,
-  ValidationResult,
   type DatePickerProps as RACDatePickerProps,
+  type ValidationResult,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 import { Button } from "./Button";
@@ -33,7 +33,7 @@ export const DatePicker = <T extends DateValue>({
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       {label && <Label>{label}</Label>}
@@ -48,15 +48,15 @@ export const DatePicker = <T extends DateValue>({
           })}
         />
         <Button
-          variant="icon"
           className={css({
             w: "6",
             mr: "1",
             borderRadius: "sm",
             ringOffset: "0",
           })}
+          variant="icon"
         >
-          <Icon name="calendar" className={css({ w: "4", h: "4" })} />
+          <Icon className={css({ w: "4", h: "4" })} name="calendar" />
         </Button>
       </FieldGroup>
       {description && <Description>{description}</Description>}

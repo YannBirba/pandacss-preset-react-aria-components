@@ -1,10 +1,10 @@
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
 import {
   Checkbox as RACCheckbox,
   CheckboxGroup as RACCheckboxGroup,
-  ValidationResult,
   type CheckboxGroupProps as RACCheckboxGroupProps,
   type CheckboxProps as RACCheckboxProps,
+  type ValidationResult,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 import { Description, FieldError, Label } from "./Field";
@@ -26,7 +26,7 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "2" })
+        css({ display: "flex", flexDir: "column", gap: "2" }),
       )}
     >
       <Label>{props.label}</Label>
@@ -127,9 +127,9 @@ export const Checkbox = (props: CheckboxProps) => {
         <>
           <div className={cx(boxStyles, focusRing)}>
             {isIndeterminate ? (
-              <Icon name="minus" className={iconStyles} />
+              <Icon className={iconStyles} name="minus" />
             ) : isSelected ? (
-              <Icon name="check" className={iconStyles} />
+              <Icon className={iconStyles} name="check" />
             ) : null}
           </div>
           {props.children}

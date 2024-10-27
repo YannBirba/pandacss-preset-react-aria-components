@@ -1,16 +1,16 @@
 import {
   Group,
-  LabelProps,
+  type GroupProps,
+  type LabelProps,
   FieldError as RACFieldError,
+  type FieldErrorProps as RACFieldErrorProps,
   Input as RACInput,
+  type InputProps as RACInputProps,
   Label as RACLabel,
   Text,
-  type GroupProps,
-  type FieldErrorProps as RACFieldErrorProps,
-  type InputProps as RACInputProps,
   type TextProps,
 } from "react-aria-components";
-import { Styles, css, cx } from "../../styled-system/css";
+import { type Styles, css, cx } from "../../styled-system/css";
 import { focusRing } from "./focusRing";
 
 export function Label(props: LabelProps) {
@@ -25,7 +25,7 @@ export function Label(props: LabelProps) {
           cursor: "default",
           w: "fit",
         }),
-        props.className
+        props.className,
       )}
     />
   );
@@ -35,11 +35,11 @@ export function Description(props: TextProps) {
   return (
     <Text
       {...props}
-      slot="description"
       className={cx(
         css({ fontSize: "sm", color: "gray.600" }),
-        props.className
+        props.className,
       )}
+      slot="description"
     />
   );
 }
@@ -97,7 +97,7 @@ export const fieldGroupBaseStyles = css({
 export const fieldGroupStyles = cx(
   fieldBorderStyles,
   fieldGroupBaseStyles,
-  focusRing
+  focusRing,
 );
 
 export function FieldGroup(props: GroupProps) {
@@ -126,7 +126,7 @@ export function Input(props: InputProps) {
           fontSize: "sm",
           color: "gray.800",
           _disabled: { color: "gray.200", _dark: { color: "zinc.600" } },
-        })
+        }),
       )}
     />
   );

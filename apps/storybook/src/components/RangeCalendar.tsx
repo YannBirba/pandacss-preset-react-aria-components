@@ -1,10 +1,10 @@
 import {
-  RangeCalendar as RACRangeCalendar,
-  type RangeCalendarProps as RACRangeCalendarProps,
   CalendarCell,
   CalendarGrid,
   CalendarGridBody,
-  DateValue,
+  type DateValue,
+  RangeCalendar as RACRangeCalendar,
+  type RangeCalendarProps as RACRangeCalendarProps,
   Text,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
@@ -26,31 +26,31 @@ const cell = css({
   justifyContent: "center",
   borderRadius: "full",
   bgColor: {
-      _groupHover: {
-        base: "gray.100",
-        _dark: "zinc.700",
-      },
-      _groupPressed: { base: "gray.200", _dark: "zinc.600" },
-      _groupSelected: {
-        _hover: {
-          base: "blue.200",
-          _dark: "blue.900",
-          _invalid: {
-            base: "red.200",
-            _dark: "red.900",
-          },
+    _groupHover: {
+      base: "gray.100",
+      _dark: "zinc.700",
+    },
+    _groupPressed: { base: "gray.200", _dark: "zinc.600" },
+    _groupSelected: {
+      _hover: {
+        base: "blue.200",
+        _dark: "blue.900",
+        _invalid: {
+          base: "red.200",
+          _dark: "red.900",
         },
-        _pressed: {
-          base: "blue.300",
-          _dark: "blue.800",
-          _invalid: {
-            base: "red.300",
-            _dark: "red.800",
-          },
-        },
-        _selectionStart: { base: "blue.600", _invalid: "red.600" },
-        _selectionEnd: { base: "blue.600", _invalid: "red.600" },
       },
+      _pressed: {
+        base: "blue.300",
+        _dark: "blue.800",
+        _invalid: {
+          base: "red.300",
+          _dark: "red.800",
+        },
+      },
+      _selectionStart: { base: "blue.600", _invalid: "red.600" },
+      _selectionEnd: { base: "blue.600", _invalid: "red.600" },
+    },
   },
   color: {
     base: "zinc.900",
@@ -86,8 +86,6 @@ export function RangeCalendar<T extends DateValue>({
         <CalendarGridBody>
           {(date) => (
             <CalendarCell
-              data-group
-              date={date}
               className={css({
                 w: "9",
                 h: "9",
@@ -117,6 +115,8 @@ export function RangeCalendar<T extends DateValue>({
                   borderEndRadius: "full",
                 },
               })}
+              data-group
+              date={date}
             >
               {({ formattedDate }) => (
                 <span className={cx(focusRing, cell)}>{formattedDate}</span>
@@ -127,11 +127,11 @@ export function RangeCalendar<T extends DateValue>({
       </CalendarGrid>
       {errorMessage && (
         <Text
-          slot="errorMessage"
           className={css({
             fontSize: "sm",
             color: "red.600",
           })}
+          slot="errorMessage"
         >
           {errorMessage}
         </Text>

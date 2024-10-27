@@ -11,6 +11,6 @@ const meta: Meta<typeof Calendar> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <Calendar aria-label="Event date" {...args} />
 );

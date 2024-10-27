@@ -17,7 +17,7 @@ export function Meter({ label, ...props }: MeterProps) {
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       {({ percentage, valueText }) => (
@@ -35,12 +35,11 @@ export function Meter({ label, ...props }: MeterProps) {
                 css({ fontSize: "sm" }),
                 percentage >= 80
                   ? css({ color: "red.600", _dark: { color: "red.500" } })
-                  : css({ color: "gray.600", _dark: { color: "zinc.400" } })
+                  : css({ color: "gray.600", _dark: { color: "zinc.400" } }),
               )}
             >
               {percentage >= 80 && (
                 <Icon
-                  name="triangle-alert"
                   aria-label="Alert"
                   className={css({
                     display: "inline-block",
@@ -48,9 +47,10 @@ export function Meter({ label, ...props }: MeterProps) {
                     h: "4",
                     verticalAlign: "text-bottom",
                   })}
+                  name="triangle-alert"
                 />
               )}
-              {" " + valueText}
+              {` ${valueText}`}
             </span>
           </div>
           <div
@@ -80,9 +80,9 @@ export function Meter({ label, ...props }: MeterProps) {
                   ? css({ bgColor: "green.600" })
                   : percentage < 80
                     ? css({ bgColor: "orange.500" })
-                    : css({ bgColor: "red.600" })
+                    : css({ bgColor: "red.600" }),
               )}
-              style={{ width: percentage + "%" }}
+              style={{ width: `${percentage}%` }}
             />
           </div>
         </>

@@ -1,11 +1,11 @@
 import {
-  DateInputProps,
+  type DateInputProps,
   DateSegment,
-  DateValue,
+  type DateValue,
   DateField as RACDateField,
-  DateFieldProps as RACDateFieldProps,
+  type DateFieldProps as RACDateFieldProps,
   DateInput as RACDateInput,
-  ValidationResult,
+  type ValidationResult,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 import { Description, FieldError, Label, fieldGroupStyles } from "./Field";
@@ -29,7 +29,7 @@ export function DateField<T extends DateValue>({
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       {label && <Label>{label}</Label>}
@@ -74,7 +74,6 @@ const segmentStyles = css({
 export function DateInput(props: Omit<DateInputProps, "children">) {
   return (
     <RACDateInput
-      data-group
       className={cx(
         fieldGroupStyles,
         css({
@@ -85,11 +84,12 @@ export function DateInput(props: Omit<DateInputProps, "children">) {
           pt: "1.5",
           pb: "1.5",
           fontSize: "sm",
-        })
+        }),
       )}
+      data-group
       {...props}
     >
-      {(segment) => <DateSegment segment={segment} className={segmentStyles} />}
+      {(segment) => <DateSegment className={segmentStyles} segment={segment} />}
     </RACDateInput>
   );
 }

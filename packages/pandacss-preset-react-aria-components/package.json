@@ -1,9 +1,19 @@
 {
-  "name": "pandacss-preset-react-aria-components",
-  "version": "0.1.0",
   "author": "Yann Birba <birbayann@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/YannBirba/pandacss-preset-react-aria-components/issues"
+  },
   "description": "A 🐼 PandaCSS preset for React aria components",
-  "license": "MIT",
+  "devDependencies": {
+    "@pandacss/dev": "^0.41.0",
+    "@pandacss/preset-base": "^0.41.0",
+    "@pandacss/types": "^0.41.0",
+    "@types/node": "^20.14.9",
+    "release-it": "^17.4.0",
+    "release-it-pnpm": "^4.6.2",
+    "tsup": "^8.1.0"
+  },
+  "files": ["dist"],
   "keywords": [
     "css",
     "styling",
@@ -14,36 +24,24 @@
     "react-aria",
     "react-aria-components"
   ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "name": "pandacss-preset-react-aria-components",
+  "peerDependencies": {
+    "@pandacss/dev": ">=0.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YannBirba/pandacss-preset-react-aria-components.git"
-  },
-  "bugs": {
-    "url": "https://github.com/YannBirba/pandacss-preset-react-aria-components/issues"
-  },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
   },
   "scripts": {
     "build": "tsup",
     "watch": "pnpm build --watch"
   },
-  "devDependencies": {
-    "@pandacss/dev": "^0.41.0",
-    "@pandacss/preset-base": "^0.41.0",
-    "@pandacss/types": "^0.41.0",
-    "@types/node": "^20.14.9",
-    "release-it": "^17.4.0",
-    "release-it-pnpm": "^4.6.2",
-    "tsup": "^8.1.0"
-  },
-  "peerDependencies": {
-    "@pandacss/dev": ">=0.9.0"
-  }
+  "types": "dist/index.d.ts",
+  "version": "0.1.0"
 }

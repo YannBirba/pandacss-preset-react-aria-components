@@ -1,0 +1,82 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "assists": {
+    "actions": {
+      "source": {
+        "sortJsxProps": "on",
+        "useSortedKeys": "on"
+      }
+    },
+    "enabled": true
+  },
+  "css": {
+    "assists": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "files": {
+    "ignore": [
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/storybook-static/**",
+      "**/dist/**",
+      "**/styled-system/**"
+    ],
+    "ignoreUnknown": true
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "lineEnding": "lf"
+  },
+  "javascript": {
+    "assists": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "semicolons": "always"
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "json": {
+    "assists": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useImportType": {
+          "level": "error"
+        }
+      }
+    }
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "vcs": {
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
+}

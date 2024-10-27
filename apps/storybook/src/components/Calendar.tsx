@@ -4,11 +4,11 @@ import {
   CalendarGrid,
   CalendarGridBody,
   CalendarHeaderCell,
-  DateValue,
+  type DateValue,
   Heading,
   Calendar as RACCalendar,
   CalendarGridHeader as RACCalendarGridHeader,
-  CalendarProps as RACCalendarProps,
+  type CalendarProps as RACCalendarProps,
   Text,
   useLocale,
 } from "react-aria-components";
@@ -62,19 +62,19 @@ export const Calendar = <T extends DateValue>({
         <CalendarGridBody>
           {(date) => (
             <CalendarCell
-              date={date}
               className={cx(calendarStyle, focusRing)}
+              date={date}
             />
           )}
         </CalendarGridBody>
       </CalendarGrid>
       {errorMessage && (
         <Text
-          slot="errorMessage"
           className={css({
             fontSize: "sm",
             color: "red.600",
           })}
+          slot="errorMessage"
         >
           {errorMessage}
         </Text>
@@ -84,7 +84,7 @@ export const Calendar = <T extends DateValue>({
 };
 
 export const CalendarHeader = () => {
-  let { direction } = useLocale();
+  const { direction } = useLocale();
 
   return (
     <header
@@ -98,7 +98,7 @@ export const CalendarHeader = () => {
         w: "full",
       })}
     >
-      <Button variant="icon" slot="previous">
+      <Button slot="previous" variant="icon">
         {direction === "rtl" ? (
           <ChevronRight aria-hidden />
         ) : (
@@ -117,7 +117,7 @@ export const CalendarHeader = () => {
           _dark: { color: "zinc.200" },
         })}
       />
-      <Button variant="icon" slot="next">
+      <Button slot="next" variant="icon">
         {direction === "rtl" ? (
           <ChevronLeft aria-hidden />
         ) : (

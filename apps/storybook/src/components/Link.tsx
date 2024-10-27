@@ -1,8 +1,8 @@
 import {
   Link as RACLink,
-  LinkProps as RACLinkProps,
+  type LinkProps as RACLinkProps,
 } from "react-aria-components";
-import { cva, cx, type RecipeVariantProps } from "../../styled-system/css";
+import { type RecipeVariantProps, cva, cx } from "../../styled-system/css";
 import { focusRing } from "./focusRing";
 
 const linkRecipe = cva({
@@ -54,7 +54,7 @@ export function Link(props: LinkProps) {
   const className = cx(
     linkRecipe(variantProps),
     focusRing,
-    localProps.className
+    localProps.className,
   );
   return <RACLink {...localProps} className={className} />;
 }

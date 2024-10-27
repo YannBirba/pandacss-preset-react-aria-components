@@ -1,13 +1,7 @@
 import type { Meta } from "@storybook/react";
 import { useMemo, useState } from "react";
-import {
-  Table,
-  Cell,
-  Column,
-  Row,
-  TableHeader,
-} from "../components/Table";
 import { TableBody } from "react-aria-components";
+import { Cell, Column, Row, Table, TableHeader } from "../components/Table";
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -19,7 +13,7 @@ const meta: Meta<typeof Table> = {
 
 export default meta;
 
-let rows = [
+const rows = [
   { id: 1, name: "Games", date: "6/7/2020", type: "File folder" },
   { id: 2, name: "Program Files", date: "4/7/2021", type: "File folder" },
   { id: 3, name: "bootmgr", date: "11/20/2010", type: "System file" },
@@ -31,7 +25,7 @@ let rows = [
   { id: 9, name: "Budget.xls", date: "1/6/2024", type: "Excel file" },
 ];
 
-export const Example = (args: any) => {
+export const Example = (args: Record<string, unknown>) => {
   const [sortDescriptor, setSortDescriptor] = useState({
     column: "name",
     direction: "ascending",
@@ -42,7 +36,7 @@ export const Example = (args: any) => {
     const items = rows
       .slice()
       .sort((a, b) =>
-        a[sortDescriptor.column].localeCompare(b[sortDescriptor.column])
+        a[sortDescriptor.column].localeCompare(b[sortDescriptor.column]),
       );
     if (sortDescriptor.direction === "descending") {
       items.reverse();
@@ -54,17 +48,17 @@ export const Example = (args: any) => {
     <Table
       aria-label="Files"
       {...args}
+      onSortChange={setSortDescriptor}
       sortDescriptor={sortDescriptor}
-      onSortChange={ setSortDescriptor }
     >
       <TableHeader>
-        <Column id="name" isRowHeader allowsSorting>
+        <Column allowsSorting id="name" isRowHeader>
           Name
         </Column>
-        <Column id="type" allowsSorting>
+        <Column allowsSorting id="type">
           Type
         </Column>
-        <Column id="date" allowsSorting>
+        <Column allowsSorting id="date">
           Date Modified
         </Column>
       </TableHeader>

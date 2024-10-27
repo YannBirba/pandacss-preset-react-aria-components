@@ -3,14 +3,14 @@ import {
   Button,
   Tag as RACTag,
   TagGroup as RACTagGroup,
-  TagList,
-  Text,
   type TagGroupProps as RACTagGroupProps,
   type TagProps as RACTagProps,
+  TagList,
   type TagListProps,
+  Text,
 } from "react-aria-components";
-import { css, cva, cx, type RecipeVariantProps } from "../../styled-system/css";
-import { type RecipeVariantRecord } from "../../styled-system/types";
+import { type RecipeVariantProps, css, cva, cx } from "../../styled-system/css";
+import type { RecipeVariantRecord } from "../../styled-system/types";
 import { Description, Label } from "./Field";
 import { Icon } from "./Icon";
 import { focusRing } from "./focusRing";
@@ -105,7 +105,7 @@ const tagRecipe = cva({
         bgColor: "zinc.800",
         color: "zinc.600",
         borderColor: "white/5",
-      }
+      },
     },
   },
   variants: {
@@ -148,15 +148,15 @@ export function TagGroup<T extends object>({
       {...props}
       className={cx(
         css({ display: "flex", flexDir: "column", gap: "1" }),
-        props.className
+        props.className,
       )}
     >
       <Label>{label}</Label>
       <ColorContext.Provider value={props.color || "gray"}>
         <TagList
+          className={css({ display: "flex", flexWrap: "wrap", gap: "1" })}
           items={items}
           renderEmptyState={renderEmptyState}
-          className={css({ display: "flex", flexWrap: "wrap", gap: "1" })}
         >
           {children}
         </TagList>
@@ -164,11 +164,11 @@ export function TagGroup<T extends object>({
       {description && <Description>{description}</Description>}
       {errorMessage && (
         <Text
-          slot="errorMessage"
           className={css({
             fontSize: "sm",
             color: "red.600",
           })}
+          slot="errorMessage"
         >
           {errorMessage}
         </Text>
@@ -200,7 +200,7 @@ export function Tag({ children, color, ...props }: TagProps) {
       className={cx(
         focusRing,
         tagRecipe({ color: color || groupColor }),
-        props.className
+        props.className,
       )}
     >
       {({ allowsRemoving }) => (
@@ -208,11 +208,11 @@ export function Tag({ children, color, ...props }: TagProps) {
           {children}
           {allowsRemoving && (
             <Button
+              className={cx(focusRing, removeButtonStyles)}
               isDisabled={props.isDisabled}
               slot="remove"
-              className={cx(focusRing, removeButtonStyles)}
             >
-              <Icon name="x" className={css({ w: "3", h: "3" })} />
+              <Icon className={css({ w: "3", h: "3" })} name="x" />
             </Button>
           )}
         </>

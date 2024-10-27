@@ -1,11 +1,11 @@
 import {
   Tab as RACTab,
   TabList as RACTabList,
-  TabPanel as RACTabPanel,
-  Tabs as RACTabs,
   type TabListProps as RACTabListProps,
+  TabPanel as RACTabPanel,
   type TabPanelProps as RACTabPanelProps,
   type TabProps as RACTabProps,
+  Tabs as RACTabs,
   type TabsProps as RACTabsProps,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";

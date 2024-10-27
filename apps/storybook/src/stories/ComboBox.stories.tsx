@@ -21,7 +21,7 @@ const meta: Meta<typeof ComboBox> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <ComboBox {...args}>
     <ComboBoxItem>Chocolate</ComboBoxItem>
     <ComboBoxItem id="mint">Mint</ComboBoxItem>
@@ -30,12 +30,14 @@ export const Example = (args: any) => (
   </ComboBox>
 );
 
-export const DisabledItems = (args: any) => <Example {...args} />;
+export const DisabledItems = (args: Record<string, unknown>) => (
+  <Example {...args} />
+);
 DisabledItems.args = {
   disabledKeys: ["mint"],
 };
 
-export const Sections = (args: any) => (
+export const Sections = (args: Record<string, unknown>) => (
   <ComboBox {...args}>
     <ComboBoxSection title="Fruit">
       <ComboBoxItem id="Apple">Apple</ComboBoxItem>
@@ -64,7 +66,7 @@ Sections.args = {
   label: "Preferred fruit or vegetable",
 };
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

@@ -1,9 +1,5 @@
 import type { Meta } from "@storybook/react";
-import {
-  MenuTrigger,
-  Popover,
-  SubmenuTrigger,
-} from "react-aria-components";
+import { MenuTrigger, Popover, SubmenuTrigger } from "react-aria-components";
 import { css } from "../../styled-system/css";
 import { Button } from "../components/Button";
 import { Icon } from "../components/Icon";
@@ -19,10 +15,10 @@ const meta: Meta<typeof Menu> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <MenuTrigger>
-    <Button variant="secondary" className={css({ pl: "2", pr: "2" })}>
-      <Icon name="ellipsis" className={css({ w: "5", h: "5" })} />
+    <Button className={css({ pl: "2", pr: "2" })} variant="secondary">
+      <Icon className={css({ w: "5", h: "5" })} name="ellipsis" />
     </Button>
     <Menu {...args}>
       <MenuItem id="new">New…</MenuItem>
@@ -36,15 +32,17 @@ export const Example = (args: any) => (
   </MenuTrigger>
 );
 
-export const DisabledItems = (args: any) => <Example {...args} />;
+export const DisabledItems = (args: Record<string, unknown>) => (
+  <Example {...args} />
+);
 DisabledItems.args = {
   disabledKeys: ["save"],
 };
 
-export const Sections = (args: any) => (
+export const Sections = (args: Record<string, unknown>) => (
   <MenuTrigger>
-    <Button variant="secondary" className={css({ pl: "2", pr: "2" })}>
-      <Icon name="ellipsis" className={css({ w: "5", h: "5" })} />
+    <Button className={css({ pl: "2", pr: "2" })} variant="secondary">
+      <Icon className={css({ w: "5", h: "5" })} name="ellipsis" />
     </Button>
     <Menu {...args}>
       <MenuSection title="Your Content">
@@ -63,10 +61,10 @@ export const Sections = (args: any) => (
   </MenuTrigger>
 );
 
-export const Submenu = (args: any) => (
+export const Submenu = (args: Record<string, unknown>) => (
   <MenuTrigger defaultOpen>
-    <Button variant="secondary" className={css({ pl: "2", pr: "2" })}>
-      <Icon name="ellipsis" className={css({ w: "5", h: "5" })} />
+    <Button className={css({ pl: "2", pr: "2" })} variant="secondary">
+      <Icon className={css({ w: "5", h: "5" })} name="ellipsis" />
     </Button>
     <Menu {...args}>
       <MenuItem id="new">New…</MenuItem>

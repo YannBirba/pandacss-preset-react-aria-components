@@ -1,10 +1,10 @@
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
 import {
   Radio as RACRadio,
   RadioGroup as RACRadioGroup,
-  ValidationResult,
   type RadioGroupProps as RACRadioGroupProps,
   type RadioProps as RACRadioProps,
+  type ValidationResult,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 import { Description, FieldError, Label } from "./Field";
@@ -28,7 +28,7 @@ export function RadioGroup(props: RadioGroupProps) {
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "2" })
+        css({ display: "flex", flexDir: "column", gap: "2" }),
       )}
     >
       <Label>{props.label}</Label>
@@ -83,8 +83,8 @@ const styles = css({
     _selected: {
       borderColor: "gray.500",
       _dark: { borderColor: "zinc.500" },
-    }
-  }
+    },
+  },
 });
 export type RadioProps = Omit<RACRadioProps, "className"> & {
   className?: string;
@@ -93,8 +93,7 @@ export type RadioProps = Omit<RACRadioProps, "className"> & {
 export function Radio(props: RadioProps) {
   return (
     <RACRadio
-      { ...props }
-      data-group
+      {...props}
       className={cx(
         props.className,
         css({
@@ -109,10 +108,12 @@ export function Radio(props: RadioProps) {
             "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
           transitionTimingFunction: "default",
           transitionDuration: "fast",
-        })
+        }),
       )}
+      data-group
     >
       <div className={cx(focusRing, styles)} />
+      {/* biome-ignore lint/complexity/noUselessFragments: <children can be a render function so we need to wrap it in a fragment> */}
       <>{props.children}</>
     </RACRadio>
   );

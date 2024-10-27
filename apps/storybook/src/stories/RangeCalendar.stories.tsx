@@ -11,6 +11,6 @@ const meta: Meta<typeof RangeCalendar> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <RangeCalendar aria-label="Trip dates" {...args} />
 );

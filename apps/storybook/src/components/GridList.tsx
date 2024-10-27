@@ -1,8 +1,8 @@
 import {
   Button,
+  type GridListItemProps,
   GridList as RACGridList,
   GridListItem as RACGridListItem,
-  type GridListItemProps,
   type GridListProps as RACGridListProps,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
@@ -31,7 +31,7 @@ export const GridList = <T extends object>({
           borderWidth: "1px",
           _dark: { borderColor: "zinc.600" },
           borderRadius: "lg",
-        })
+        }),
       )}
     >
       {children}
@@ -95,7 +95,7 @@ const itemStyles = css({
 });
 
 export function GridListItem({ children, ...props }: GridListItemProps) {
-  let textValue = typeof children === "string" ? children : undefined;
+  const textValue = typeof children === "string" ? children : undefined;
   return (
     <RACGridListItem
       textValue={textValue}

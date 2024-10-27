@@ -11,7 +11,7 @@ const meta: Meta<typeof Slider> = {
 
 export default meta;
 
-export const Example = (args: any) => <Slider {...args} />;
+export const Example = (args: Record<string, unknown>) => <Slider {...args} />;
 
 Example.args = {
   label: "Range",

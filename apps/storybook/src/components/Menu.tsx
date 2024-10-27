@@ -1,20 +1,20 @@
 import {
+  type MenuItemProps,
   Menu as RACMenu,
   MenuItem as RACMenuItem,
   type MenuProps as RACMenuProps,
-  type MenuItemProps,
   Separator,
-  SeparatorProps,
+  type SeparatorProps,
   composeRenderProps,
 } from "react-aria-components";
-import {
-  DropdownSection,
-  DropdownSectionProps,
-  dropdownItemStyles,
-} from "./ListBox";
-import { Popover, PopoverProps } from "./Popover";
 import { css } from "../../styled-system/css";
 import { Icon } from "./Icon";
+import {
+  DropdownSection,
+  type DropdownSectionProps,
+  dropdownItemStyles,
+} from "./ListBox";
+import { Popover, type PopoverProps } from "./Popover";
 
 type MenuProps<T> = RACMenuProps<T> & {
   placement?: PopoverProps["placement"];
@@ -22,7 +22,7 @@ type MenuProps<T> = RACMenuProps<T> & {
 
 export const Menu = <T extends object>(props: MenuProps<T>) => {
   return (
-    <Popover placement={props.placement} className={css({ minW: "150px" })}>
+    <Popover className={css({ minW: "150px" })} placement={props.placement}>
       <RACMenu
         {...props}
         className={css({
@@ -36,7 +36,7 @@ export const Menu = <T extends object>(props: MenuProps<T>) => {
       />
     </Popover>
   );
-}
+};
 
 export function MenuItem(props: MenuItemProps) {
   return (
@@ -54,7 +54,7 @@ export function MenuItem(props: MenuItemProps) {
                 })}
               >
                 {isSelected && (
-                  <Icon name="check" className={css({ w: "4", h: "4" })} />
+                  <Icon className={css({ w: "4", h: "4" })} name="check" />
                 )}
               </span>
             )}
@@ -74,13 +74,18 @@ export function MenuItem(props: MenuItemProps) {
             </span>
             {hasSubmenu && (
               <Icon
-                name="chevron-right"
+                className={css({
+                  pos: "absolute",
+                  w: "4",
+                  h: "4",
+                  right: "8px",
+                })}
                 // TODO: fix this
-                className={css({ pos: "absolute", w: "4", h: "4", right: "8px" })}
+                name="chevron-right"
               />
             )}
           </>
-        )
+        ),
       )}
     </RACMenuItem>
   );

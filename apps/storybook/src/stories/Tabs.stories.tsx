@@ -11,7 +11,7 @@ const meta: Meta<typeof Tabs> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <Tabs {...args}>
     <TabList aria-label="History of Ancient Rome">
       <Tab id="FoR">Founding of Rome</Tab>

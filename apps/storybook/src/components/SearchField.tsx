@@ -2,8 +2,8 @@ import { css, cx } from "../../styled-system/css";
 
 import {
   SearchField as RACSearchField,
-  ValidationResult,
   type SearchFieldProps as RACSearchFieldProps,
+  type ValidationResult,
 } from "react-aria-components";
 import { Button } from "./Button";
 import { Description, FieldError, FieldGroup, Input, Label } from "./Field";
@@ -28,13 +28,12 @@ export function SearchField({
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1", minW: "40px" })
+        css({ display: "flex", flexDir: "column", gap: "1", minW: "40px" }),
       )}
     >
       {label && <Label>{label}</Label>}
       <FieldGroup>
         <Icon
-          name="search"
           className={css({
             w: "4",
             h: "4",
@@ -43,6 +42,7 @@ export function SearchField({
             _dark: { color: "zinc.400" },
             _groupDisabled: { color: "gray.200", _dark: { color: "zinc.600" } },
           })}
+          name="search"
         />
         <Input
           className={css({
@@ -50,14 +50,14 @@ export function SearchField({
           })}
         />
         <Button
-          variant="icon"
           className={css({
             mr: "1",
             w: "6",
             _groupEmpty: { visibility: "hidden" },
           })}
+          variant="icon"
         >
-          <Icon name="x" className={css({ w: "4", h: "4" })} />
+          <Icon className={css({ w: "4", h: "4" })} name="x" />
         </Button>
       </FieldGroup>
       {description && <Description>{description}</Description>}

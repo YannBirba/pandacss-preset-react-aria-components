@@ -20,20 +20,20 @@ const meta: Meta<typeof Popover> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <DialogTrigger>
-    <Button variant="icon" aria-label="Help">
-      <Icon name="circle-help" className={css({ w: "4", h: "4" })} />
+    <Button aria-label="Help" variant="icon">
+      <Icon className={css({ w: "4", h: "4" })} name="circle-help" />
     </Button>
     <Popover {...args} className={css({ maxW: "250px" })}>
       <Dialog>
         <Heading
-          slot="title"
           className={css({
             fontSize: "lg",
             fontWeight: "semibold",
             mb: "2",
           })}
+          slot="title"
         >
           Help
         </Heading>

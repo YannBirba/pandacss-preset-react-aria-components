@@ -1,7 +1,7 @@
 import {
   OverlayArrow,
   Tooltip as RACTooltip,
-  TooltipProps as RACTooltipProps,
+  type TooltipProps as RACTooltipProps,
 } from "react-aria-components";
 import { css } from "../../styled-system/css";
 
@@ -62,17 +62,18 @@ const styles = css({
 
 export function Tooltip({ children, ...props }: TooltipProps) {
   return (
-    <RACTooltip data-group {...props} offset={10} className={styles}>
+    <RACTooltip data-group {...props} className={styles} offset={10}>
       <OverlayArrow>
         <svg
-          width={8}
-          height={8}
-          viewBox="0 0 8 8"
           className={css({
             fill: "slate.700",
             _dark: { fill: "slate.600", stroke: "white/10" },
             stroke: "gray.800",
           })}
+          height={8}
+          role="presentation"
+          viewBox="0 0 8 8"
+          width={8}
         >
           <path d="M0 0 L4 4 L8 0" />
         </svg>

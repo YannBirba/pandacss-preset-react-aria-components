@@ -1,9 +1,8 @@
-
 import type { Meta } from "@storybook/react";
 import { Form } from "react-aria-components";
 import { css } from "../../styled-system/css";
-import { DatePicker } from "../components/DatePicker";
 import { Button } from "../components/Button";
+import { DatePicker } from "../components/DatePicker";
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
@@ -18,9 +17,11 @@ const meta: Meta<typeof DatePicker> = {
 
 export default meta;
 
-export const Example = (args: any) => <DatePicker {...args} />;
+export const Example = (args: Record<string, unknown>) => (
+  <DatePicker {...args} />
+);
 
-export const Validation = (args: any) => (
+export const Validation = (args: Record<string, unknown>) => (
   <Form
     className={css({
       display: "flex",

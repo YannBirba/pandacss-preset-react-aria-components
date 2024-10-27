@@ -15,10 +15,10 @@ const meta: Meta<typeof Form> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <Form {...args}>
-    <TextField label="Email" name="email" type="email" isRequired />
-    <DateField label="Birth date" isRequired />
+    <TextField isRequired label="Email" name="email" type="email" />
+    <DateField isRequired label="Birth date" />
     <div
       className={css({
         display: "flex",

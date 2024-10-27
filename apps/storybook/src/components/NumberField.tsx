@@ -1,9 +1,9 @@
 import {
   Button,
-  NumberField as RACNumberField,
-  ValidationResult,
   type ButtonProps,
+  NumberField as RACNumberField,
   type NumberFieldProps as RACNumberFieldProps,
+  type ValidationResult,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
 import {
@@ -35,7 +35,7 @@ export function NumberField({
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       <Label>{label}</Label>
@@ -48,21 +48,21 @@ export function NumberField({
               display: "flex",
               flexDir: "column",
               borderInlineStartWidth: "2px",
-            })
+            }),
           )}
         >
           <StepperButton slot="increment">
-            <Icon name="chevron-up" className={css({ w: "4", h: "4" })} />
+            <Icon className={css({ w: "4", h: "4" })} name="chevron-up" />
           </StepperButton>
           <div
             aria-hidden
             className={cx(
               groupFieldBorderStyles,
-              css({ borderBottomWidth: "2px" })
+              css({ borderBottomWidth: "2px" }),
             )}
           />
           <StepperButton slot="decrement">
-            <Icon name="chevron-down" className={css({ w: "4", h: "4" })} />
+            <Icon className={css({ w: "4", h: "4" })} name="chevron-down" />
           </StepperButton>
         </div>
       </FieldGroup>

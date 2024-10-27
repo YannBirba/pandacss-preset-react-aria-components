@@ -1,17 +1,16 @@
-
 import { CalendarIcon } from "lucide-react";
 import {
   DateRangePicker as AriaDateRangePicker,
-  DateRangePickerProps as AriaDateRangePickerProps,
-  DateValue,
-  ValidationResult,
+  type DateRangePickerProps as AriaDateRangePickerProps,
+  type DateValue,
+  type ValidationResult,
 } from "react-aria-components";
+import { css, cx } from "../../styled-system/css";
 import { Button } from "./Button";
 import { DateInput } from "./DateField";
 import { Dialog } from "./Dialog";
 import { Description, FieldError, FieldGroup, Label } from "./Field";
 import { Popover } from "./Popover";
-import { css, cx } from "../../styled-system/css";
 import { RangeCalendar } from "./RangeCalendar";
 
 export interface DateRangePickerProps<T extends DateValue>
@@ -33,18 +32,18 @@ export function DateRangePicker<T extends DateValue>({
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       {label && <Label>{label}</Label>}
       <FieldGroup className={css({ minW: "208px", w: "auto" })}>
         <DateInput
-          slot="start"
           className={css({
             px: "2",
             py: "1.5",
             fontSize: "sm",
           })}
+          slot="start"
         />
         <span
           aria-hidden="true"
@@ -57,22 +56,22 @@ export function DateRangePicker<T extends DateValue>({
           –
         </span>
         <DateInput
-          slot="end"
           className={css({
             flex: "1",
             px: "2",
             py: "1.5",
             fontSize: "sm",
           })}
+          slot="end"
         />
         <Button
-          variant="icon"
           className={css({
             w: "6",
             mr: "1",
             borderRadius: "sm",
             ringOffset: "0",
           })}
+          variant="icon"
         >
           <CalendarIcon aria-hidden className={css({ w: "4", h: "4" })} />
         </Button>

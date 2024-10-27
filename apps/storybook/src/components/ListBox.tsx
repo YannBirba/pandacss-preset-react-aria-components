@@ -1,12 +1,12 @@
 import {
   Collection,
   Header,
-  ListBoxItemProps,
+  type ListBoxItemProps,
   ListBox as RACListBox,
   ListBoxItem as RACListBoxItem,
-  ListBoxProps as RACListBoxProps,
+  type ListBoxProps as RACListBoxProps,
   Section,
-  SectionProps,
+  type SectionProps,
   composeRenderProps,
 } from "react-aria-components";
 import { css, cx } from "../../styled-system/css";
@@ -33,7 +33,7 @@ export function ListBox<T extends object>({
           borderWidth: "1px",
           borderColor: { base: "gray.300", _dark: "zinc.600" },
           borderRadius: "lg",
-        })
+        }),
       )}
     >
       {children}
@@ -83,9 +83,9 @@ export function ListBoxItem(props: ListBoxItemProps) {
   return (
     <RACListBoxItem
       {...props}
-      textValue={textValue}
       className={cx(focusRing, itemStyles)}
       data-group
+      textValue={textValue}
     >
       <>
         {props.children}
@@ -144,9 +144,9 @@ export function DropdownItem(props: ListBoxItemProps) {
   return (
     <RACListBoxItem
       {...props}
-      textValue={textValue}
       className={dropdownItemStyles}
       data-group
+      textValue={textValue}
     >
       {composeRenderProps(props.children, (children, { isSelected }) => (
         <>
@@ -168,7 +168,7 @@ export function DropdownItem(props: ListBoxItemProps) {
             className={css({ display: "flex", alignItems: "center", w: "5" })}
           >
             {isSelected && (
-              <Icon name="check" className={css({ w: "4", h: "4" })} />
+              <Icon className={css({ w: "4", h: "4" })} name="check" />
             )}
           </span>
         </>
@@ -182,7 +182,7 @@ export interface DropdownSectionProps<T> extends SectionProps<T> {
 }
 
 export function DropdownSection<T extends object>(
-  props: DropdownSectionProps<T>
+  props: DropdownSectionProps<T>,
 ) {
   return (
     <Section

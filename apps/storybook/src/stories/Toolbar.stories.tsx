@@ -1,13 +1,13 @@
 import { Group } from "react-aria-components";
 
 import type { Meta } from "@storybook/react";
-import { Icon } from "../components/Icon";
 import { css } from "../../styled-system/css";
-import { ToggleButton } from "../components/ToggleButton";
 import { Button } from "../components/Button";
 import { Checkbox } from "../components/Checkbox";
-import { Toolbar } from "../components/Toolbar";
+import { Icon } from "../components/Icon";
 import { Separator } from "../components/Separator";
+import { ToggleButton } from "../components/ToggleButton";
+import { Toolbar } from "../components/Toolbar";
 
 const meta: Meta<typeof Toolbar> = {
   component: Toolbar,
@@ -19,17 +19,17 @@ const meta: Meta<typeof Toolbar> = {
 
 export default meta;
 
-export const Example = (args: any) => (
+export const Example = (args: Record<string, unknown>) => (
   <Toolbar aria-label="Text formatting" {...args}>
     <Group aria-label="Style" className={css({ display: "contents" })}>
       <ToggleButton aria-label="Bold" className={css({ p: "2.5" })}>
-        <Icon name="bold" className={css({ w: "4", h: "4" })} />
+        <Icon className={css({ w: "4", h: "4" })} name="bold" />
       </ToggleButton>
       <ToggleButton aria-label="Italic" className={css({ p: "2.5" })}>
-        <Icon name="italic" className={css({ w: "4", h: "4" })} />
+        <Icon className={css({ w: "4", h: "4" })} name="italic" />
       </ToggleButton>
       <ToggleButton aria-label="Underline" className={css({ p: "2.5" })}>
-        <Icon name="underline" className={css({ w: "4", h: "4" })} />
+        <Icon className={css({ w: "4", h: "4" })} name="underline" />
       </ToggleButton>
     </Group>
     <Separator

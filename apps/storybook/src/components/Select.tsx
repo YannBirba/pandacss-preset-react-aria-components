@@ -1,6 +1,6 @@
 import { css, cx } from "../../styled-system/css";
 
-import React from "react";
+import type React from "react";
 import {
   Button,
   ListBox,
@@ -8,11 +8,15 @@ import {
   Select as RACSelect,
   type SelectProps as RACSelectProps,
   SelectValue,
-  ValidationResult,
+  type ValidationResult,
 } from "react-aria-components";
 import { Description, FieldError, Label } from "./Field";
 import { Icon } from "./Icon";
-import { DropdownItem, DropdownSection, DropdownSectionProps } from "./ListBox";
+import {
+  DropdownItem,
+  DropdownSection,
+  type DropdownSectionProps,
+} from "./ListBox";
 import { Popover } from "./Popover";
 import { focusRing } from "./focusRing";
 
@@ -81,7 +85,7 @@ export function Select<T extends object>({
       {...props}
       className={cx(
         props.className,
-        css({ display: "flex", flexDir: "column", gap: "1" })
+        css({ display: "flex", flexDir: "column", gap: "1" }),
       )}
     >
       {label && <Label>{label}</Label>}
@@ -94,7 +98,6 @@ export function Select<T extends object>({
           })}
         />
         <Icon
-          name="chevron-down"
           className={css({
             w: "4",
             h: "4",
@@ -102,13 +105,13 @@ export function Select<T extends object>({
             _dark: { color: "zinc.400" },
             _groupDisabled: { color: "gray.200", _dark: { color: "zinc.600" } },
           })}
+          name="chevron-down"
         />
       </Button>
       {description && <Description>{description}</Description>}
       <FieldError>{errorMessage}</FieldError>
       <Popover className={css({ minW: "var(--trigger-width)" })}>
         <ListBox
-          items={items}
           className={css({
             ring: "none",
             ringOffset: "0",
@@ -117,6 +120,7 @@ export function Select<T extends object>({
             overflow: "auto",
             clipPath: "inset(0 0 0 0 round .75rem)",
           })}
+          items={items}
         >
           {children}
         </ListBox>
@@ -130,7 +134,7 @@ export function SelectItem(props: ListBoxItemProps) {
 }
 
 export function SelectSection<T extends object>(
-  props: DropdownSectionProps<T>
+  props: DropdownSectionProps<T>,
 ) {
   return <DropdownSection {...props} />;
 }

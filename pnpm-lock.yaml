@@ -41,7 +41,7 @@ importers:
         version: 3.1.0(react@18.3.1)(storybook@8.3.6)
       '@pandacss/dev':
         specifier: ^0.47.0
-        version: 0.47.0(typescript@5.5.2)
+        version: 0.47.0(typescript@5.6.3)
       '@storybook/addon-a11y':
         specifier: ^8.3.6
         version: 8.3.6(storybook@8.3.6)
@@ -62,10 +62,10 @@ importers:
         version: 8.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)
       '@storybook/react':
         specifier: ^8.3.6
-        version: 8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)(typescript@5.5.2)
+        version: 8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)(typescript@5.6.3)
       '@storybook/react-vite':
         specifier: ^8.3.6
-        version: 8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)(storybook@8.3.6)(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
+        version: 8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)(storybook@8.3.6)(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
       '@storybook/test':
         specifier: ^8.3.6
         version: 8.3.6(storybook@8.3.6)
@@ -86,19 +86,19 @@ importers:
         version: 8.3.6
       typescript:
         specifier: ^5.5.2
-        version: 5.5.2
+        version: 5.6.3
       vite:
         specifier: ^5.3.2
         version: 5.3.2(@types/node@22.8.0)(lightningcss@1.25.1)
       vite-tsconfig-paths:
         specifier: ^5.0.1
-        version: 5.0.1(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
+        version: 5.0.1(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
 
   packages/pandacss-preset-react-aria-components:
     devDependencies:
       '@pandacss/dev':
         specifier: ^0.41.0
-        version: 0.41.0(typescript@5.5.2)
+        version: 0.41.0(typescript@5.6.3)
       '@pandacss/preset-base':
         specifier: ^0.41.0
         version: 0.41.0
@@ -110,13 +110,13 @@ importers:
         version: 20.14.9
       release-it:
         specifier: ^17.4.0
-        version: 17.4.0(typescript@5.5.2)
+        version: 17.4.0(typescript@5.6.3)
       release-it-pnpm:
         specifier: ^4.6.2
-        version: 4.6.2(release-it@17.4.0(typescript@5.5.2))
+        version: 4.6.2(release-it@17.4.0(typescript@5.6.3))
       tsup:
         specifier: ^8.1.0
-        version: 8.1.0(@swc/core@1.6.6)(postcss@8.4.38)(typescript@5.5.2)
+        version: 8.1.0(@swc/core@1.6.6(@swc/helpers@0.5.11))(postcss@8.4.38)(typescript@5.6.3)
 
 packages:
 
@@ -4705,8 +4705,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.5.2:
-    resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -5365,15 +5365,15 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@joshwooding/vite-plugin-react-docgen-typescript@0.3.0(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))':
+  '@joshwooding/vite-plugin-react-docgen-typescript@0.3.0(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))':
     dependencies:
       glob: 7.2.3
       glob-promise: 4.2.2(glob@7.2.3)
       magic-string: 0.27.0
-      react-docgen-typescript: 2.2.2(typescript@5.5.2)
+      react-docgen-typescript: 2.2.2(typescript@5.6.3)
       vite: 5.3.2(@types/node@22.8.0)(lightningcss@1.25.1)
     optionalDependencies:
-      typescript: 5.5.2
+      typescript: 5.6.3
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
@@ -5558,13 +5558,13 @@ snapshots:
       postcss-selector-parser: 6.1.2
       ts-pattern: 5.0.8
 
-  '@pandacss/dev@0.41.0(typescript@5.5.2)':
+  '@pandacss/dev@0.41.0(typescript@5.6.3)':
     dependencies:
       '@clack/prompts': 0.7.0
       '@pandacss/config': 0.41.0
       '@pandacss/logger': 0.41.0
-      '@pandacss/node': 0.41.0(typescript@5.5.2)
-      '@pandacss/postcss': 0.41.0(typescript@5.5.2)
+      '@pandacss/node': 0.41.0(typescript@5.6.3)
+      '@pandacss/postcss': 0.41.0(typescript@5.6.3)
       '@pandacss/preset-panda': 0.41.0
       '@pandacss/shared': 0.41.0
       '@pandacss/token-dictionary': 0.41.0
@@ -5574,13 +5574,13 @@ snapshots:
       - jsdom
       - typescript
 
-  '@pandacss/dev@0.47.0(typescript@5.5.2)':
+  '@pandacss/dev@0.47.0(typescript@5.6.3)':
     dependencies:
       '@clack/prompts': 0.7.0
       '@pandacss/config': 0.47.0
       '@pandacss/logger': 0.47.0
-      '@pandacss/node': 0.47.0(typescript@5.5.2)
-      '@pandacss/postcss': 0.47.0(typescript@5.5.2)
+      '@pandacss/node': 0.47.0(typescript@5.6.3)
+      '@pandacss/postcss': 0.47.0(typescript@5.6.3)
       '@pandacss/preset-panda': 0.47.0
       '@pandacss/shared': 0.47.0
       '@pandacss/token-dictionary': 0.47.0
@@ -5590,19 +5590,19 @@ snapshots:
       - jsdom
       - typescript
 
-  '@pandacss/extractor@0.41.0(typescript@5.5.2)':
+  '@pandacss/extractor@0.41.0(typescript@5.6.3)':
     dependencies:
       '@pandacss/shared': 0.41.0
-      ts-evaluator: 1.2.0(typescript@5.5.2)
+      ts-evaluator: 1.2.0(typescript@5.6.3)
       ts-morph: 21.0.1
     transitivePeerDependencies:
       - jsdom
       - typescript
 
-  '@pandacss/extractor@0.47.0(typescript@5.5.2)':
+  '@pandacss/extractor@0.47.0(typescript@5.6.3)':
     dependencies:
       '@pandacss/shared': 0.47.0
-      ts-evaluator: 1.2.0(typescript@5.5.2)
+      ts-evaluator: 1.2.0(typescript@5.6.3)
       ts-morph: 21.0.1
     transitivePeerDependencies:
       - jsdom
@@ -5650,14 +5650,14 @@ snapshots:
       '@pandacss/types': 0.47.0
       kleur: 4.1.5
 
-  '@pandacss/node@0.41.0(typescript@5.5.2)':
+  '@pandacss/node@0.41.0(typescript@5.6.3)':
     dependencies:
       '@pandacss/config': 0.41.0
       '@pandacss/core': 0.41.0
-      '@pandacss/extractor': 0.41.0(typescript@5.5.2)
+      '@pandacss/extractor': 0.41.0(typescript@5.6.3)
       '@pandacss/generator': 0.41.0
       '@pandacss/logger': 0.41.0
-      '@pandacss/parser': 0.41.0(typescript@5.5.2)
+      '@pandacss/parser': 0.41.0(typescript@5.6.3)
       '@pandacss/shared': 0.41.0
       '@pandacss/token-dictionary': 0.41.0
       '@pandacss/types': 0.41.0
@@ -5680,19 +5680,19 @@ snapshots:
       prettier: 3.2.5
       ts-morph: 21.0.1
       ts-pattern: 5.0.8
-      tsconfck: 3.0.2(typescript@5.5.2)
+      tsconfck: 3.0.2(typescript@5.6.3)
     transitivePeerDependencies:
       - jsdom
       - typescript
 
-  '@pandacss/node@0.47.0(typescript@5.5.2)':
+  '@pandacss/node@0.47.0(typescript@5.6.3)':
     dependencies:
       '@pandacss/config': 0.47.0
       '@pandacss/core': 0.47.0
-      '@pandacss/extractor': 0.47.0(typescript@5.5.2)
+      '@pandacss/extractor': 0.47.0(typescript@5.6.3)
       '@pandacss/generator': 0.47.0
       '@pandacss/logger': 0.47.0
-      '@pandacss/parser': 0.47.0(typescript@5.5.2)
+      '@pandacss/parser': 0.47.0(typescript@5.6.3)
       '@pandacss/shared': 0.47.0
       '@pandacss/token-dictionary': 0.47.0
       '@pandacss/types': 0.47.0
@@ -5715,16 +5715,16 @@ snapshots:
       prettier: 3.2.5
       ts-morph: 21.0.1
       ts-pattern: 5.0.8
-      tsconfck: 3.0.2(typescript@5.5.2)
+      tsconfck: 3.0.2(typescript@5.6.3)
     transitivePeerDependencies:
       - jsdom
       - typescript
 
-  '@pandacss/parser@0.41.0(typescript@5.5.2)':
+  '@pandacss/parser@0.41.0(typescript@5.6.3)':
     dependencies:
       '@pandacss/config': 0.41.0
       '@pandacss/core': 0.41.0
-      '@pandacss/extractor': 0.41.0(typescript@5.5.2)
+      '@pandacss/extractor': 0.41.0(typescript@5.6.3)
       '@pandacss/logger': 0.41.0
       '@pandacss/shared': 0.41.0
       '@pandacss/types': 0.41.0
@@ -5736,11 +5736,11 @@ snapshots:
       - jsdom
       - typescript
 
-  '@pandacss/parser@0.47.0(typescript@5.5.2)':
+  '@pandacss/parser@0.47.0(typescript@5.6.3)':
     dependencies:
       '@pandacss/config': 0.47.0
       '@pandacss/core': 0.47.0
-      '@pandacss/extractor': 0.47.0(typescript@5.5.2)
+      '@pandacss/extractor': 0.47.0(typescript@5.6.3)
       '@pandacss/logger': 0.47.0
       '@pandacss/shared': 0.47.0
       '@pandacss/types': 0.47.0
@@ -5752,17 +5752,17 @@ snapshots:
       - jsdom
       - typescript
 
-  '@pandacss/postcss@0.41.0(typescript@5.5.2)':
+  '@pandacss/postcss@0.41.0(typescript@5.6.3)':
     dependencies:
-      '@pandacss/node': 0.41.0(typescript@5.5.2)
+      '@pandacss/node': 0.41.0(typescript@5.6.3)
       postcss: 8.4.38
     transitivePeerDependencies:
       - jsdom
       - typescript
 
-  '@pandacss/postcss@0.47.0(typescript@5.5.2)':
+  '@pandacss/postcss@0.47.0(typescript@5.6.3)':
     dependencies:
-      '@pandacss/node': 0.47.0(typescript@5.5.2)
+      '@pandacss/node': 0.47.0(typescript@5.6.3)
       postcss: 8.4.47
     transitivePeerDependencies:
       - jsdom
@@ -6990,7 +6990,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/builder-vite@8.3.6(storybook@8.3.6)(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))':
+  '@storybook/builder-vite@8.3.6(storybook@8.3.6)(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))':
     dependencies:
       '@storybook/csf-plugin': 8.3.6(storybook@8.3.6)
       '@types/find-cache-dir': 3.2.1
@@ -7004,7 +7004,7 @@ snapshots:
       ts-dedent: 2.2.0
       vite: 5.3.2(@types/node@22.8.0)(lightningcss@1.25.1)
     optionalDependencies:
-      typescript: 5.5.2
+      typescript: 5.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -7073,12 +7073,12 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       storybook: 8.3.6
 
-  '@storybook/react-vite@8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)(storybook@8.3.6)(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))':
+  '@storybook/react-vite@8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.18.0)(storybook@8.3.6)(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))':
     dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.0(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
+      '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.0(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
       '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
-      '@storybook/builder-vite': 8.3.6(storybook@8.3.6)(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
-      '@storybook/react': 8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)(typescript@5.5.2)
+      '@storybook/builder-vite': 8.3.6(storybook@8.3.6)(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1))
+      '@storybook/react': 8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)(typescript@5.6.3)
       find-up: 5.0.0
       magic-string: 0.30.10
       react: 18.3.1
@@ -7096,7 +7096,7 @@ snapshots:
       - typescript
       - vite-plugin-glimmerx
 
-  '@storybook/react@8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)(typescript@5.5.2)':
+  '@storybook/react@8.3.6(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.6)(typescript@5.6.3)':
     dependencies:
       '@storybook/components': 8.3.6(storybook@8.3.6)
       '@storybook/global': 5.0.0
@@ -7123,7 +7123,7 @@ snapshots:
       util-deprecate: 1.0.2
     optionalDependencies:
       '@storybook/test': 8.3.6(storybook@8.3.6)
-      typescript: 5.5.2
+      typescript: 5.6.3
 
   '@storybook/telemetry@8.3.6(storybook@8.3.6)':
     dependencies:
@@ -7920,14 +7920,14 @@ snapshots:
 
   cookie@0.6.0: {}
 
-  cosmiconfig@9.0.0(typescript@5.5.2):
+  cosmiconfig@9.0.0(typescript@5.6.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.5.2
+      typescript: 5.6.3
 
   cross-spawn@7.0.3:
     dependencies:
@@ -9816,9 +9816,9 @@ snapshots:
       react: 18.3.1
       tween-functions: 1.2.0
 
-  react-docgen-typescript@2.2.2(typescript@5.5.2):
+  react-docgen-typescript@2.2.2(typescript@5.6.3):
     dependencies:
-      typescript: 5.5.2
+      typescript: 5.6.3
 
   react-docgen@7.0.3:
     dependencies:
@@ -9948,25 +9948,25 @@ snapshots:
       hast-util-to-string: 3.0.0
       unist-util-visit: 5.0.0
 
-  release-it-pnpm@4.6.2(release-it@17.4.0(typescript@5.5.2)):
+  release-it-pnpm@4.6.2(release-it@17.4.0(typescript@5.6.3)):
     dependencies:
       bumpp: 9.4.1
       changelogithub: 0.13.7
       conventional-changelog-conventionalcommits: 8.0.0
       conventional-recommended-bump: 10.0.0
       kolorist: 1.8.0
-      release-it: 17.4.0(typescript@5.5.2)
+      release-it: 17.4.0(typescript@5.6.3)
       semver: 7.6.2
     transitivePeerDependencies:
       - magicast
 
-  release-it@17.4.0(typescript@5.5.2):
+  release-it@17.4.0(typescript@5.6.3):
     dependencies:
       '@iarna/toml': 2.2.5
       '@octokit/rest': 20.1.1
       async-retry: 1.3.3
       chalk: 5.3.0
-      cosmiconfig: 9.0.0(typescript@5.5.2)
+      cosmiconfig: 9.0.0(typescript@5.6.3)
       execa: 8.0.1
       git-url-parse: 14.0.0
       globby: 14.0.1
@@ -10351,12 +10351,12 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
-  ts-evaluator@1.2.0(typescript@5.5.2):
+  ts-evaluator@1.2.0(typescript@5.6.3):
     dependencies:
       ansi-colors: 4.1.3
       crosspath: 2.0.0
       object-path: 0.11.8
-      typescript: 5.5.2
+      typescript: 5.6.3
 
   ts-interface-checker@0.1.13: {}
 
@@ -10367,13 +10367,13 @@ snapshots:
 
   ts-pattern@5.0.8: {}
 
-  tsconfck@3.0.2(typescript@5.5.2):
+  tsconfck@3.0.2(typescript@5.6.3):
     optionalDependencies:
-      typescript: 5.5.2
+      typescript: 5.6.3
 
-  tsconfck@3.1.1(typescript@5.5.2):
+  tsconfck@3.1.1(typescript@5.6.3):
     optionalDependencies:
-      typescript: 5.5.2
+      typescript: 5.6.3
 
   tsconfig-paths@4.2.0:
     dependencies:
@@ -10383,7 +10383,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.1.0(@swc/core@1.6.6)(postcss@8.4.38)(typescript@5.5.2):
+  tsup@8.1.0(@swc/core@1.6.6(@swc/helpers@0.5.11))(postcss@8.4.38)(typescript@5.6.3):
     dependencies:
       bundle-require: 4.2.1(esbuild@0.21.5)
       cac: 6.7.14
@@ -10402,7 +10402,7 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.6.6(@swc/helpers@0.5.11)
       postcss: 8.4.38
-      typescript: 5.5.2
+      typescript: 5.6.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -10460,7 +10460,7 @@ snapshots:
 
   typescript@5.3.3: {}
 
-  typescript@5.5.2: {}
+  typescript@5.6.3: {}
 
   ufo@1.5.3: {}
 
@@ -10566,11 +10566,11 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-tsconfig-paths@5.0.1(typescript@5.5.2)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1)):
+  vite-tsconfig-paths@5.0.1(typescript@5.6.3)(vite@5.3.2(@types/node@22.8.0)(lightningcss@1.25.1)):
     dependencies:
       debug: 4.3.5
       globrex: 0.1.2
-      tsconfck: 3.1.1(typescript@5.5.2)
+      tsconfck: 3.1.1(typescript@5.6.3)
     optionalDependencies:
       vite: 5.3.2(@types/node@22.8.0)(lightningcss@1.25.1)
     transitivePeerDependencies:

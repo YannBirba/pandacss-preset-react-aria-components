@@ -5,9 +5,9 @@
   },
   "description": "A 🐼 PandaCSS preset for React aria components",
   "devDependencies": {
-    "@pandacss/dev": "^0.41.0",
-    "@pandacss/preset-base": "^0.41.0",
-    "@pandacss/types": "^0.41.0",
+    "@pandacss/dev": "^0.47.0",
+    "@pandacss/preset-base": "^0.47.0",
+    "@pandacss/types": "^0.47.0",
     "@types/node": "^20.14.9",
     "release-it": "^17.4.0",
     "release-it-pnpm": "^4.6.2",

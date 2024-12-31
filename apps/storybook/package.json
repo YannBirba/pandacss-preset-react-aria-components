@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.1.0",
-    "@pandacss/dev": "^0.47.0",
+    "@pandacss/dev": "^0.51.0",
     "@storybook/addon-a11y": "^8.3.6",
     "@storybook/addon-essentials": "^8.3.6",
     "@storybook/addon-interactions": "^8.3.6",
